@@ -32,10 +32,53 @@
       margin: 0;
       font-size: clamp(1.1rem, 3vw, 1.75rem);
     }
+
+    .robot {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: clamp(90px, 14vw, 140px);
+      height: auto;
+    }
+
+    .wave {
+      transform-origin: 91px 82px;
+      animation: wave 1.2s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(-10deg); }
+      50% { transform: rotate(25deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wave { animation: none; }
+    }
   </style>
 </head>
 <body>
   <h1>Hello from Shop Class</h1>
   <p>This page was built with Claude Code</p>
+
+  <svg class="robot" viewBox="0 0 120 154" aria-hidden="true">
+    <line x1="60" y1="10" x2="60" y2="24" stroke="#e8ecf4" stroke-width="3"/>
+    <circle cx="60" cy="8" r="5" fill="#c60c30"/>
+    <rect x="28" y="24" width="64" height="44" rx="10" fill="#e8ecf4"/>
+    <circle cx="46" cy="46" r="6" fill="#00338d"/>
+    <circle cx="74" cy="46" r="6" fill="#00338d"/>
+    <rect x="48" y="58" width="24" height="4" rx="2" fill="#00338d"/>
+    <rect x="52" y="68" width="16" height="6" fill="#b8c0d4"/>
+    <rect x="34" y="74" width="52" height="50" rx="10" fill="#e8ecf4"/>
+    <circle cx="60" cy="98" r="7" fill="#c60c30"/>
+    <rect x="20" y="80" width="10" height="36" rx="5" fill="#b8c0d4"/>
+    <g class="wave">
+      <rect x="86" y="40" width="10" height="44" rx="5" fill="#b8c0d4"/>
+      <circle cx="91" cy="36" r="7" fill="#e8ecf4"/>
+    </g>
+    <rect x="42" y="124" width="12" height="20" fill="#b8c0d4"/>
+    <rect x="66" y="124" width="12" height="20" fill="#b8c0d4"/>
+    <rect x="38" y="142" width="20" height="8" rx="4" fill="#e8ecf4"/>
+    <rect x="62" y="142" width="20" height="8" rx="4" fill="#e8ecf4"/>
+  </svg>
 </body>
 </html>
